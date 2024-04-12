@@ -18,7 +18,7 @@ heart_model = pickle.load(open(f'heart_disease_model.sav','rb'))
 parkinsons_model= pickle.load(open(f'parkinsons_model.sav','rb')) 
 
 with st.sidebar:
-    selected = option_menu('Multiple Disease Prediction System',
+    selected = option_menu('Multiple Disease Prediction using ML',
 
                            ['Diabetes Prediction','Heart Disease Prediction','Parkinsons Prediction'],
                            menu_icon='hospital-fill',
@@ -30,7 +30,7 @@ with st.sidebar:
 if selected == 'Diabetes Prediction':
 
   
-    st.title('Diabetes Prediction using ML')
+    st.title('Diabetes Prediction')
 
     col1, col2, col3 = st.columns(3)
 
@@ -63,7 +63,7 @@ if selected == 'Diabetes Prediction':
     diab_diagnosis = ''
 
 
-    if st.button('Diabetes Test Result'):
+    if st.button('Test Result'):
 
         user_input = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
                       BMI, DiabetesPedigreeFunction, Age]
@@ -81,7 +81,7 @@ if selected == 'Diabetes Prediction':
 
 if (selected == "Heart Disease Prediction"):
 
-    st.title('Heart Disease Prediction using ML')
+    st.title('Heart Disease Prediction ')
 
     col1, col2, col3 = st.columns(3)
 
@@ -126,7 +126,7 @@ if (selected == "Heart Disease Prediction"):
 
     heart_diagnosis = ''
 
-    if st.button('Heart Disease Test Result'):
+    if st.button('Test Result'):
         user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
         user_input = [float (i) for i in user_input]
         heart_prediction = heart_model.predict([user_input])
@@ -141,7 +141,7 @@ if (selected == "Heart Disease Prediction"):
 if selected == "Parkinsons Prediction":
 
   
-    st.title("Parkinson's Disease Prediction using ML")
+    st.title("Parkinson's Disease Prediction ")
 
     col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -214,7 +214,7 @@ if selected == "Parkinsons Prediction":
    
     parkinsons_diagnosis = ''
 
-    if st.button("Parkinson's Test Result"):
+    if st.button("Test Result"):
 
         user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs,
                       RAP, PPQ, DDP,Shimmer, Shimmer_dB, APQ3, APQ5,
